@@ -4,6 +4,7 @@ import UploadForm from "@/components/upload/upload-form";
 import UploadHeader from "@/components/upload/upload-header";
 import { containerVariants } from "@/utils/constants";
 
+export const maxDuration = 20;
 
 
 export default function Page(){
