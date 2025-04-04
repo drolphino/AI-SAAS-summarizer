@@ -16,9 +16,9 @@ export default function Header(){
         </div>
 
         <div className="flex lg:justify-center gap-4 lg:gap-12 lg:items-center">
-            <NavLink href="/#pricing">Pricing</NavLink>
+            <NavLink href="/#pricing" className="relative inline-flex items-center justify-center px-4 rounded-full border border-rose-500 bg-gradient-to-r from-rose-500/10 to-rose-700/10 text-rose-600 font-semibold shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-rose-500/40 hover:text-rose-700 ">Pricing</NavLink>
             <SignedIn>
-                <NavLink href="/dashboard">Your Summaries</NavLink>
+                <NavLink href="/dashboard" className="relative inline-flex items-center justify-center px-4  rounded-full border border-rose-500 bg-gradient-to-r from-rose-500/10 to-rose-700/10 text-rose-600 font-semibold shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-rose-500/40 hover:text-rose-700 ">Your Summaries</NavLink>
             </SignedIn>
            
         </div>
