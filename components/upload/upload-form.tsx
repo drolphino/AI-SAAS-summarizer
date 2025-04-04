@@ -60,24 +60,19 @@ export default function UploadForm(){
             toast("📄 Uploading PDF...",{ description:"We are uploading your PDF!"})
             
             //upload the file to uploadthing
-            try {
-                const uploadResponse = await startUpload([file]);
-                console.log("✅ Upload response:", uploadResponse);
-              } catch (error) {
-                console.error("❌ Error during startUpload:", error);
+            
+            
+            const uploadResponse = await startUpload([file]);  
+            console.log("✅ Upload response:", uploadResponse);
+            
+            if(!uploadResponse) {
+                
+                toast("Something went wrong",{
+                    description:"Please use a different file"
+                })
                 setIsloading(false);
                 return;
-              }
-              
-            // console.log("✅ Upload response:", uploadResponse);
-            // if(!uploadResponse) {
-                
-            //     toast("Something went wrong",{
-            //         description:"Please use a different file"
-            //     })
-            //     setIsloading(false);
-            //     return;
-            // }
+            }
             toast("📄 Processing PDF...",{description:"Hang tight! Our AI is reading through your document! ✨"})
             
             // const uploadedFileUrl = uploadResponse[0].serverData.fileUrl;
@@ -86,7 +81,9 @@ export default function UploadForm(){
             if (!uploadedFileUrl) {
                 toast("❌ File upload failed", {
                     description: "We couldn’t retrieve the file URL. Try again."
+                    
                 });
+                console.log("Error in uloadedFileUrl");
                 setIsloading(false);
                 return;
             }
