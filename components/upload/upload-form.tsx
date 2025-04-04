@@ -71,7 +71,17 @@ export default function UploadForm(){
             }
             toast("📄 Processing PDF...",{description:"Hang tight! Our AI is reading through your document! ✨"})
             
-            const uploadedFileUrl = uploadResponse[0].serverData.fileUrl;
+            // const uploadedFileUrl = uploadResponse[0].serverData.fileUrl;
+            const uploadedFileUrl = uploadResponse?.[0]?.serverData?.fileUrl;
+
+            if (!uploadedFileUrl) {
+                toast("❌ File upload failed", {
+                    description: "We couldn’t retrieve the file URL. Try again."
+                });
+                setIsloading(false);
+                return;
+            }
+
             //parse the pdf using langchain
             const result = await generatePdfSummary({
                 fileUrl:uploadedFileUrl,
