@@ -5,6 +5,7 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
+import { ORIGIN_URL } from "@/utils/helper";
 
 
 const fontSans = FontSans({
@@ -17,6 +18,12 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "chota - AI powered PDF summarization",
   description: "Saves hours of reading time. Transform lengthy PDF's into clear, accurate summaries in seconds with our advanced AI Technology",
+
+  metadataBase: new URL(ORIGIN_URL),
+  alternates:{
+    canonical: ORIGIN_URL,
+  },
+
 };
 
 export default function RootLayout({
