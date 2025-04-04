@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   title: "chota - AI powered PDF summarization",
   description: "Saves hours of reading time. Transform lengthy PDF's into clear, accurate summaries in seconds with our advanced AI Technology",
 
-  metadataBase: new URL(ORIGIN_URL),
-  alternates:{
-    canonical: ORIGIN_URL,
-  },
+  // metadataBase: new URL(ORIGIN_URL),
+  // alternates:{
+  //   canonical: ORIGIN_URL,
+  // },
 
 };
 
